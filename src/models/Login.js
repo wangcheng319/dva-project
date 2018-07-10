@@ -1,0 +1,28 @@
+/**
+ * Created by wangc on 2018/7/10.
+ */
+
+export default {
+
+  namespace: 'login',
+
+  state: {},
+
+  subscriptions: {
+    setup({ dispatch, history }) {  // eslint-disable-line
+    },
+  },
+
+  effects: {
+    *fetch({ payload }, { select,call, put }) {  // eslint-disable-line
+      yield put({ type: 'save' });
+    },
+  },
+
+  reducers: {
+    save(state, action) {
+      return { ...state, ...action.payload };
+    },
+  },
+
+};
