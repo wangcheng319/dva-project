@@ -3,13 +3,34 @@
  */
 import { connect } from 'dva';
 import React from 'react';
+import UI from '../components/Login'
 
 
 const Login = (props)=>{
+
+  function changeHandler(e) {
+    const value = e.target.value
+    props.dispatch({
+      type: 'login/set',
+      payload: {
+        field: 'name1',
+        value
+      }
+    })
+  }
+
+  function onBtnClick(e) {
+    props.dispatch({
+      type:'login/login'
+    })
+  }
+
     return(
-      <div>
-        denglu
-      </div>
+      <UI
+        changeHandler={changeHandler}
+        state={props.login}
+        onBtnClick = {onBtnClick}
+      />
     )
 }
 
