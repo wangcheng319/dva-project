@@ -1,0 +1,31 @@
+.login_title{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  padding: 20px;
+  color: #46AAFC;
+  font-size: 2rem;
+}
+
+.login_name{
+  width: 80%;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid gainsboro;
+  padding: 10px;
+  outline: none;
+}
+
+.test{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.login_btn{
+  width: 80%;
+  height: 40px;
+}

@@ -25,11 +25,23 @@ const Login = (props)=>{
     })
   }
 
+  function passwdChangeHandler(e) {
+    const value = e.target.value
+    props.dispatch({
+      type: 'login/set',
+      payload: {
+        field: 'passwd',
+        value
+      }
+    })
+  }
+
     return(
       <UI
         changeHandler={changeHandler}
         state={props.login}
         onBtnClick = {onBtnClick}
+        passwdChangeHandler = {passwdChangeHandler}
       />
     )
 }

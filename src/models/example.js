@@ -26,7 +26,6 @@ export default {
     },
 
     *to_next(action,{select,call,put}){
-      console.log("22222")
       yield put(routerRedux.push('/Login'))
     }
   },
