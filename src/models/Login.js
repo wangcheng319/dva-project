@@ -2,6 +2,8 @@
  * Created by wangc on 2018/7/10.
  */
 import { routerRedux } from 'dva/router';
+import axios from 'axios';
+import $ from 'jquery';
 export default {
 
   namespace: 'login',
@@ -40,7 +42,25 @@ export default {
 
     //到达登录页面，通常用于获取初始化数据
     *tologin({ payload }, { select,call, put }){
-      const value = "1234"
+
+      $(function(){
+        $.ajax({
+          async: true,
+          type: "GET",
+          dataType: 'jsonp',
+          jsonp: 'callback',
+          jsonpCallback: 'callbackfunction',
+          url: "https://api.douban.com/v2/book/1220562",
+          data: "",
+          timeout: 3000,
+          contentType: "application/json;utf-8",
+          success: function(data) {
+            console.log(data);
+          }
+        });
+      })
+
+      const value = "123"
       yield put({
         type: 'set',
         payload: {

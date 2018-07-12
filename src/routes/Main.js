@@ -7,10 +7,20 @@ import React from 'react';
 
 const Main = (props)=>{
 
+  function onItemClick(item) {
+    props.dispatch({
+      type: 'main/itemClick',
+      payload: item
+    })
+  }
+
   return (
     <UI
+      onItemClick = {onItemClick}
     />
   )
 }
 
-export default connect (({main})=>({main}))(Main)
+export default connect (({ main }) => ({ main }))(Main)
+
+
