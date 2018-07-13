@@ -11,6 +11,7 @@ export default {
   state: {
     name1:'',
     passwd:'',
+    loginname:'张三'
   },
 
   /**
@@ -43,22 +44,22 @@ export default {
     //到达登录页面，通常用于获取初始化数据
     *tologin({ payload }, { select,call, put }){
 
-      $(function(){
-        $.ajax({
-          async: true,
-          type: "GET",
-          dataType: 'jsonp',
-          jsonp: 'callback',
-          jsonpCallback: 'callbackfunction',
-          url: "https://api.douban.com/v2/book/1220562",
-          data: "",
-          timeout: 3000,
-          contentType: "application/json;utf-8",
-          success: function(data) {
-            console.log(data);
-          }
-        });
-      })
+      // $(function(){
+      //   $.ajax({
+      //     async: true,
+      //     type: "GET",
+      //     dataType: 'jsonp',
+      //     jsonp: 'callback',
+      //     jsonpCallback: 'callbackfunction',
+      //     url: "https://api.douban.com/v2/book/1220562",
+      //     data: "",
+      //     timeout: 3000,
+      //     contentType: "application/json;utf-8",
+      //     success: function(data) {
+      //       console.log(data);
+      //     }
+      //   });
+      // })
 
       const value = "123"
       yield put({
@@ -114,7 +115,6 @@ export default {
 
   reducers: {
     save(state, action) {
-
       return { ...state, ...action.payload };
     },
     set(state, { payload: { field, value } }) {

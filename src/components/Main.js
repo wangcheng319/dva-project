@@ -14,7 +14,7 @@ import React from 'react';
       render(){
         return(
           <div>
-            header
+            header{props.state_login.loginname}
           </div>
         )
       }
@@ -30,7 +30,7 @@ import React from 'react';
               //点击事件利用bind传参
               <div key={book.bookname} onClick={props.onItemClick.bind(this,book)}>
                 <div>书名：{book.bookname}</div>
-                <div>出版时间：{book.time}</div>
+                <div>出版时间：{book.time} </div>
                 <img src={require('../assets/yay.jpg')} alt="" width="42" height="42"/>
                 <img src={book.bookurl} width="80" height="80"/>
                 <hr />

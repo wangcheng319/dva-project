@@ -35,7 +35,6 @@ const UI = (props) => {
         <Button type="primary" onClick={props.onBtnClick} className={styles.login_btn}>登录</Button>
       </div>
 
-
     </div>
   )
 }
