@@ -3,12 +3,7 @@
  */
 import React from 'react';
  const UI =  (props)=>{
-  const books = [
-    { bookname: '1', time: '一号',bookurl:'http://img3.imgtn.bdimg.com/it/u=1094595333,134359380&fm=27&gp=0.jpg'},
-    { bookname: '2', time: '二号',bookurl:'http://img3.imgtn.bdimg.com/it/u=1094595333,134359380&fm=27&gp=0.jpg'},
-    { bookname: '3', time: '三号',bookurl:'http://img3.imgtn.bdimg.com/it/u=1094595333,134359380&fm=27&gp=0.jpg'},
-    {bookname: '4', time: '四号',bookurl:'http://img3.imgtn.bdimg.com/it/u=1094595333,134359380&fm=27&gp=0.jpg'}
-  ];
+
 
   class Header extends  React.Component{
       render(){
@@ -25,7 +20,7 @@ import React from 'react';
       <Header/>
       <div>
         {
-          books.map(book => {
+          props.state.books.map(book => {
             return (
               //点击事件利用bind传参
               <div key={book.bookname} onClick={props.onItemClick.bind(this,book)}>
